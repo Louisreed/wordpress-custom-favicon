@@ -3,7 +3,7 @@
 Plugin Name: Wordpress Custom Favicon
 Plugin URI: https://github.com/Louisreed/wordpress-custom-favicon
 Description: Custom Favicon is a simple and lightweight Wordpress plugin that allows you to easily change the favicon for your site.
-Version: 1.4
+Version: 1.5
 Author: Louis Reed
 Author URI: https://louisreed.co.uk
 */
