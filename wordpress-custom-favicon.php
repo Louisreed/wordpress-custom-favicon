@@ -8,6 +8,11 @@ Author: Louis Reed
 Author URI: https://louisreed.co.uk
 */
 
+// Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) {
+  exit;
+}
+
 // Register the plugin settings
 function custom_favicon_register_settings() {
     add_option( 'custom_favicon', '', '', 'yes' );
@@ -61,25 +66,12 @@ function custom_favicon_wp_head() {
 }
 add_action( 'wp_head', 'custom_favicon_wp_head' );
 
-wp_enqueue_script( 'woocommerce_admin' );
-wp_enqueue_script( 'wc-enhanced-select' );
-wp_enqueue_style( 'woocommerce_admin_styles' );
-
 function custom_favicon_enqueue_scripts() {
-  // Register the script
-  wp_register_script( 'custom-favicon', plugin_dir_url( __FILE__ ) . 'wordpress-custom-favicon.js', array( 'wp-media-uploader' ), '1.0', true );
+  // Enqueue the WordPress media library scripts
+  wp_enqueue_media();
 
-  // Localize the script with some data
-  $translation_array = array(
-      'input_name' => 'custom_favicon'  // Replace with the name of the input field for the favicon URL
-  );
-  wp_localize_script( 'custom-favicon', 'custom_favicon_data', $translation_array );
-
-  // Enqueue the script
+  // Register and enqueue the custom script
+  wp_register_script( 'custom-favicon', plugin_dir_url( __FILE__ ) . 'custom-favicon.js', array( 'wp-media-uploader' ), '1.0', true );
   wp_enqueue_script( 'custom-favicon' );
 }
 add_action( 'admin_enqueue_scripts', 'custom_favicon_enqueue_scripts' );
-
-
-
-
