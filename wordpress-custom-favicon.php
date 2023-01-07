@@ -38,7 +38,7 @@ function custom_favicon_options() {
 <div class="wrap">
     <h2><?php esc_html_e( 'Custom Favicon', 'custom-favicon' ); ?></h2>
     <form name="custom_favicon_form" method="post" action="">
-        <?php wp_nonce_field( 'custom_favicon_form_action', 'custom_favicon_form_nonce_field', true, false ); ?>
+        <?php wp_nonce_field( 'custom_favicon_form_action', 'custom_favicon_form_nonce_field', true, false, WEEK_IN_SECONDS ); ?>
         <table class="form-table">
             <tr valign="top">
                 <th scope="row"><label for="custom_favicon"><?php esc_html_e( 'Favicon URL', 'custom-favicon' ); ?></label></th>
