@@ -1,4 +1,4 @@
-// Open the WooCommerce media library when the "Upload Image" button is clicked
+// Open the WordPress media library when the "Upload Image" button is clicked
 document.getElementById('upload_image_button').addEventListener('click', function(event) {
     event.preventDefault();
 
