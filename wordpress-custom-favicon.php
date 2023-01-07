@@ -34,7 +34,7 @@ function custom_favicon_settings_page() {
                     <th scope="row">Favicon</th>
                     <td>
                         <input type="text" name="custom_favicon" value="<?php echo esc_attr( get_option('custom_favicon') ); ?>" />
-                        <input id="upload_image_button" type="button" class="button" value="Upload Image" />
+                        <input id="upload_image_button" type="button" class="button" value="Upload Image" data-choose="Choose an Image" data-update="Select" />
                         <br />
                         <p class="description">Enter the URL for the favicon image or use the upload button to select an image from the media library.</p>
                     </td>
@@ -60,3 +60,34 @@ function custom_favicon_wp_head() {
     }
 }
 add_action( 'wp_head', 'custom_favicon_wp_head' );
+
+wp_enqueue_script( 'woocommerce_admin' );
+wp_enqueue_script( 'wc-enhanced-select' );
+wp_enqueue_style( 'woocommerce_admin_styles' );
+
+// Open the WooCommerce media library when the "Upload Image" button is clicked
+document.getElementById('upload_image_button').addEventListener('click', function(event) {
+  event.preventDefault();
+
+  var frame = wp.media({
+      title: 'Select or Upload Media',
+      button: {
+          text: 'Use this media'
+      },
+      multiple: false  // Set to true to allow multiple files to be selected
+  });
+
+  // When a file is selected, run a callback function
+  frame.on( 'select', function() {
+      // Get the selected attachment.
+      var attachment = frame.state().get('selection').first().toJSON();
+
+      // Insert the attachment URL into the field
+      document.getElementsByName('custom_favicon')[0].value = attachment.url;
+  });
+
+  // Open the modal
+  frame.open();
+});
+
+
