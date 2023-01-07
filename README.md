@@ -26,7 +26,7 @@ You can use any image as the favicon, but it is recommended to use an image with
 
 **1.0**
 
--Initial release.
+- Initial release.
 
 ## Credits
 Custom Favicon was developed by John Doe.
