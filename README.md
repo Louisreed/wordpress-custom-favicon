@@ -16,4 +16,20 @@ To change the favicon, navigate to the 'Custom Favicon' settings page under the 
 
 **Where can I find the favicon on the front-end of the site?**
 
-The favicon will be displayed in the browser's address bar and in the browser's tab. It may also be
+The favicon will be displayed in the browser's address bar and in the browser's tab. It may also be displayed on the site's bookmark or as an icon on the homescreen of a mobile device, depending on the browser and device.
+
+**Can I use any image as the favicon?**
+
+You can use any image as the favicon, but it is recommended to use an image with a square aspect ratio and dimensions of at least 512x512 pixels. It is also recommended to use a file format that is supported by all major browsers, such as .ico or .png.
+
+## Changelog
+
+**1.0**
+
+-Initial release.
+
+## Credits
+Custom Favicon was developed by John Doe.
+
+## License
+Custom Favicon is licensed under the GPLv2 or later.
