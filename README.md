@@ -22,12 +22,6 @@ The favicon will be displayed in the browser's address bar and in the browser's 
 
 You can use any image as the favicon, but it is recommended to use an image with a square aspect ratio and dimensions of at least 512x512 pixels. It is also recommended to use a file format that is supported by all major browsers, such as .ico or .png.
 
-## Changelog
-
-**1.0**
-
-- Initial release.
-
 ## Credits
 Wordpress Custom Favicon was developed by Louis Reed.
 
