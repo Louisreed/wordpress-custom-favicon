@@ -65,29 +65,21 @@ wp_enqueue_script( 'woocommerce_admin' );
 wp_enqueue_script( 'wc-enhanced-select' );
 wp_enqueue_style( 'woocommerce_admin_styles' );
 
-// Open the WooCommerce media library when the "Upload Image" button is clicked
-document.getElementById('upload_image_button').addEventListener('click', function(event) {
-  event.preventDefault();
+function custom_favicon_enqueue_scripts() {
+  // Register the script
+  wp_register_script( 'custom-favicon', plugin_dir_url( __FILE__ ) . 'wordpress-custom-favicon.js', array( 'wp-media-uploader' ), '1.0', true );
 
-  var frame = wp.media({
-      title: 'Select or Upload Media',
-      button: {
-          text: 'Use this media'
-      },
-      multiple: false  // Set to true to allow multiple files to be selected
-  });
+  // Localize the script with some data
+  $translation_array = array(
+      'input_name' => 'custom_favicon'  // Replace with the name of the input field for the favicon URL
+  );
+  wp_localize_script( 'custom-favicon', 'custom_favicon_data', $translation_array );
 
-  // When a file is selected, run a callback function
-  frame.on( 'select', function() {
-      // Get the selected attachment.
-      var attachment = frame.state().get('selection').first().toJSON();
+  // Enqueue the script
+  wp_enqueue_script( 'custom-favicon' );
+}
+add_action( 'admin_enqueue_scripts', 'custom_favicon_enqueue_scripts' );
 
-      // Insert the attachment URL into the field
-      document.getElementsByName('custom_favicon')[0].value = attachment.url;
-  });
 
-  // Open the modal
-  frame.open();
-});
 
 
