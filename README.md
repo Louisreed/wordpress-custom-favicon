@@ -1,5 +1,5 @@
 # Wordpress Custom Favicon
-Custom Favicon is a simple Wordpress plugin that allows you to easily change the favicon for your site. It adds a new settings page under the 'Settings' tab in the Wordpress admin dashboard, where you can upload a new favicon image or enter the URL for an image located elsewhere. The plugin also includes a media uploader button, so you can easily select an image from the media library. The new favicon will be displayed on the front-end of your site.
+Wordpress Custom Favicon is a simple Wordpress plugin that allows you to easily change the favicon for your site. It adds a new settings page under the 'Settings' tab in the Wordpress admin dashboard, where you can upload a new favicon image or enter the URL for an image located elsewhere. The plugin also includes a media uploader button, so you can easily select an image from the media library. The new favicon will be displayed on the front-end of your site.
 
 ## Installation
 1. Download the plugin from the repository or from the Wordpress plugin directory.
