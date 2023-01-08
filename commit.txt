@@ -1,16 +1,24 @@
+commit e31cd268ebc8e83450ea323901bf7b5bfe611c72
+Author: Louis Reed <mail@louisreed.co.uk>
+Date:   Sat Jan 7 21:15:32 2023 +0000
+
+    Added plugin file
+
+diff --git a/wordpress-custom-favicon.php b/wordpress-custom-favicon.php
+new file mode 100644
+index 0000000..7a5ae16
+--- /dev/null
+++ b/wordpress-custom-favicon.php
+@@ -0,0 +1,62 @@
 <?php
 /*
 Plugin Name: Wordpress Custom Favicon
 Plugin URI: https://github.com/Louisreed/wordpress-custom-favicon
 Description: Custom Favicon is a simple and lightweight Wordpress plugin that allows you to easily change the favicon for your site.
-Version: 1.6
+Version: 1.0
 Author: Louis Reed
 Author URI: https://louisreed.co.uk
 */
-
-if ( ! defined( 'ABSPATH' ) ) {
-    exit;
-}
 
 // Register the plugin settings
 function custom_favicon_register_settings() {
